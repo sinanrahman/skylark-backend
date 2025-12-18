@@ -40,23 +40,23 @@ app.use('/api', isLoggedin, issue)
 app.use('/api', isLoggedin, isAdmin, admin)
 app.use('/api', isLoggedin, isAdmin, maintenance)
 
-app.get("/run-test-backend", (req, res) => {
-    let arr = [
-        {
-            name: "adhil",
-            age: 23
-        },
-        {
-            name: "sinan",
-            age: 22
-        },
-        {
-            name: "salih",
-            age: 22
-        }
-    ]
-    return res.json({arr})
-})
+// app.get("/run-test-backend", (req, res) => {
+//     let arr = [
+//         {
+//             name: "adhil",
+//             age: 23
+//         },
+//         {
+//             name: "sinan",
+//             age: 22
+//         },
+//         {
+//             name: "salih",
+//             age: 22
+//         }
+//     ]
+//     return res.json({arr})
+// })
 
 app.use((req, res) => {
     return res.status(500).json({
