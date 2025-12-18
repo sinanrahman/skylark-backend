@@ -41,7 +41,21 @@ app.use('/api', isLoggedin, isAdmin, admin)
 app.use('/api', isLoggedin, isAdmin, maintenance)
 
 app.get("/run-test-backend", (req, res) => {
-    return res.send(`<h1 style="text-align:center;font-size:100px;font-weight:700;color:aqua;">backend is running successfully on evenode</h1>`)
+    let arr = [
+        {
+            name: "adhil",
+            age: 23
+        },
+        {
+            name: "sinan",
+            age: 22
+        },
+        {
+            name: "salih",
+            age: 22
+        }
+    ]
+    return res.json({arr})
 })
 
 app.use((req, res) => {
@@ -52,7 +66,7 @@ app.use((req, res) => {
 const port = process.env.PORT || 3000
 
 app.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}`)
+    console.log(`Server running on ${port}`)
     connectDB()
     connectCloudinary()
 });
