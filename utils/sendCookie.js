@@ -4,8 +4,8 @@ const sendCookie = async (user, res) => {
         const options = {
             expires: new Date(Date.now() + (7 * 60 * 60 * 1000)),
             httpOnly: true,
-            secure:false,
-            sameSite:'Lax'
+            secure:true,
+            sameSite:'None'
         }
   
         return res.cookie('token', token, options).status(200).json({
